@@ -1,7 +1,11 @@
 <template>
   <div id="list">
     <banner v-bind:banner="banner"></banner>
+
     <div class="width-limit list_back">
+      <div id="list_search">
+        <list-search />
+      </div>
       <div id="list_blogs">
         <div style="padding: 20px">
           <div class="list_blogs_search card">
@@ -13,9 +17,7 @@
         </div>
       </div>
       <div id="list_bars">
-        <side-bar-card/>
-        <side-bar-card/>
-        <side-bar-card/>
+        <side-bar-card v-bind:types="types"/>
       </div>
     </div>
   </div>
@@ -25,12 +27,14 @@
 
 import Banner from "../../public/banner";
 import SideBarCard from "../../public/sidebar";
+import ListSearch from "@/views/list/search";
 
 export default {
   name: 'List',
-  components: {SideBarCard, Banner},
+  components: {ListSearch, SideBarCard, Banner},
   data() {
     return {
+      types:['hot','record'],
       data: [{
         'title': '二级1',
         subData: [{}, {}]
@@ -65,14 +69,17 @@ export default {
   display: inline-block;
   width: 33%;
   vertical-align: top;
-  background-color: #86c287;
   float: left;
 }
-
+#list_search {
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+  float: left;
+}
 #list_blogs {
   display: inline-block;
   width: 67%;
-  background-color: #86a3c2;
   float: right;
 }
 .list_blogs_search{
@@ -87,6 +94,9 @@ export default {
     width: 100%;
   }
   #list_bars {
+    width: 100%;
+  }
+  #list_search {
     width: 100%;
   }
 }

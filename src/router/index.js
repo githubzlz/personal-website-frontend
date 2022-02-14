@@ -48,6 +48,10 @@ export const constantRoutes = [
             meta: {header: true, footer: true},
             component: () => import('@/views/time/TimeLine'),
         }]
+    },{
+        path: '/about',
+        name: 'AboutMe',
+        component: () => import('@/views/about/AboutMe'),
     },
     {
         path: '*',
