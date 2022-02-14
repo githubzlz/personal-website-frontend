@@ -1,0 +1,83 @@
+/*全局样式*/
+@font-face {
+    font-family: test_zlz;
+    src: url("./font/font.ttf");
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(244, 244, 244, 0.85);
+}
+
+img {
+    object-fit: cover;
+}
+.card{
+    background-color: rgb(253,253,253);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.shadow {
+    box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+}
+.inline{
+    display: inline-block;
+}
+.read_more_op{
+    font-size: 22px;
+    font-family: test_zlz;
+    color: #E9B44C;
+    transition: color 350ms;
+    cursor: pointer;
+}
+.read_more_op:hover {
+    color: #5d9adb;
+}
+.read_more_op_down{
+    font-size: 22px;
+    font-family: test_zlz;
+    transition: color 350ms;
+    cursor: pointer;
+    color: #86a3c2;
+}
+.read_more_op_down:hover {
+    color: #6eb49e;
+}
+@media only screen and (min-width: 320px) {
+    html {
+        font-size: 62.5% !important;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    html {
+        font-size: 125% !important;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    html {
+        font-size: 150% !important;
+    }
+}
+
+@media only screen and (min-width: 1242px) {
+    html {
+        font-size: 187.5% !important;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    html {
+        font-size: 212.5% !important;
+    }
+}
