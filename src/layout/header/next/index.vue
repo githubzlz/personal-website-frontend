@@ -35,17 +35,16 @@ export default {
       // 滑动到index处
       let scrollToContainer = $('#pageStart');
       console.log(scrollToContainer.offset())
-      let d = scrollToContainer.offset().top * 1.08;
+      let d = scrollToContainer.offset().top * 1.08 + 40;
+      // 滑动到指定位置
       ht.animate({
         scrollTop: d
-      },(d - 60))
-      // // 滑动到指定位置
-      // ht.animate({
-      //   scrollTop: d
-      // }, (d - 60) * 0.9, () => {
-      //   // 向上滚动一下将导航显示出来
-      //   ht.scrollTop(d - 80)
-      // });
+      }, (d - 60) * 1.1, () => {
+        // 向上滚动一下将导航显示出来
+        ht.animate({
+          scrollTop: d - 40
+        }, 50)
+      });
     }
   },
   created() {
