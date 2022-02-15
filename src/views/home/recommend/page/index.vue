@@ -3,37 +3,8 @@
     <div class="nor-card">
       <div class="recommend-blog" style="display: block; padding: 1px;">
         <div class="recommend-blog-back" :style="'background-color: #'+backColor"></div>
-        <div class="card home_page_card" v-for="(item,index) in blogs" v-bind:key="index">
-          <div class="home_page_image">
-            <img style="width: 100%; height: 100%" :src="item.imgSrc">
-          </div>
-          <div class="home_page_info">
-            <div class="home_page_info_title ellipsis">
-              {{ item.title }}
-            </div>
-            <div class="home_page_info_desc ellipsis" style="-webkit-line-clamp: 3;">
-              {{ item.desc }}
-            </div>
-            <div class="home_page_info_op">
-              <div class="read_more_op">
-                ReadMore...
-              </div>
-            </div>
-            <div class="home_page_info_other">
-              <div class="home_page_info_other_read inline">
-                <span class="el-icon-collection"></span>
-                {{ item.read }}
-              </div>
-              <div class="home_page_info_other_like inline">
-                <span class="el-icon-lollipop"></span>
-                {{ item.like }}
-              </div>
-              <div class="home_page_info_other_time inline">
-                <span class="el-icon-time"></span>
-                {{ item.lastUpdateTime }}
-              </div>
-            </div>
-          </div>
+        <div v-for="(item,index) in blogs" v-bind:key="index">
+          <blog-card v-bind:blog="item"/>
         </div>
         <a class="read_more_op_down" style="font-size: 35px;">
           more...
@@ -44,8 +15,10 @@
 </template>
 
 <script>
+import BlogCard from "@/public/blogcard";
 export default {
   name: "HomePage",
+  components: {BlogCard},
   props: {
     backColor: {
       type: String,
@@ -99,69 +72,5 @@ export default {
 </script>
 
 <style scoped>
-.home_page_card {
-  position: relative;
-  width: 85%;
-  height: 180px;
-  min-width: 200px;
-  margin: 20px auto 0 auto;
-  overflow: visible;
-  transition: all 300ms;
-}
 
-.home_page_image {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 35%;
-  overflow: hidden;
-}
-
-.home_page_info {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  right: 0;
-  width: 65%;
-  height: 100%;
-  overflow: hidden;
-  text-align: left;
-}
-
-.home_page_info_title {
-  font-size: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.home_page_info_desc {
-  font-size: 14px;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-.home_page_info_op{
-  position: absolute;
-  bottom: 40px;
-  left: 20px;
-}
-.home_page_info_other{
-  font-size: 14px;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: calc(100% - 20px);
-}
-.home_page_info_other_read{
-
-}
-.home_page_info_other_like{
-  margin-left: 10px;
-}
-.home_page_info_other_time{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
 </style>

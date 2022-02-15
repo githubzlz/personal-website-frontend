@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card side_bar_card shadow" style="padding: 14px; text-align: left" v-for="(type,i) in types"
+    <div class="card side_bar_card" v-for="(type,i) in types"
          v-bind:key="i">
       <div class="title" v-if="type==='hot'">
         <el-icon class="el-icon-notebook-1" style="margin-right: 10px; "></el-icon>
@@ -37,6 +37,8 @@ export default {
 <style scoped>
 .side_bar_card {
   margin: 20px 20px 40px 20px;
+  padding: 14px;
+  text-align: left
 }
 
 .title {
