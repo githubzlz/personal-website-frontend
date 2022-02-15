@@ -1,5 +1,17 @@
 import Vue from 'vue'
-import {Button, Drawer, Icon, Input, Menu, MenuItem, MenuItemGroup, Pagination, Submenu} from 'element-ui'
+import {
+    Button,
+    ButtonGroup,
+    Drawer,
+    Icon,
+    Input,
+    Menu,
+    MenuItem,
+    MenuItemGroup,
+    Pagination,
+    Submenu,
+    Tag
+} from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Icon)
@@ -10,3 +22,5 @@ Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(Input)
 Vue.use(Pagination)
+Vue.use(Tag)
+Vue.use(ButtonGroup)
