@@ -10,12 +10,12 @@
     background-color: rgba(200, 200, 200, 0.6);
 }
 .width-limit{
-    max-width: 40rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .recommend-blog {
     position: relative;
-    max-width: 43rem;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
@@ -27,7 +27,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    max-width: 40rem;
+    max-width: 1200px;
     left: 50%;
     transform: translateX(-50%);
     z-index: -1

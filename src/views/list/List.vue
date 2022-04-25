@@ -128,8 +128,6 @@ export default {
 
 <style>
 .list_back {
-  border: 1px dotted seagreen;
-  border-radius: 30px;
   margin-top: 80px;
   overflow: hidden;
   zoom: 1;

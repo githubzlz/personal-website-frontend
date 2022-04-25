@@ -123,7 +123,8 @@ export default {
     },
     setBlog(){
       window.editormd.markdownToHTML("test-editormd-view", {
-        markdown        : '## 测试',//+ "\r\n" + $("#append-test").text(),
+        markdown        : '## 测试 \n' +
+            '**asddasd**\n',//+ "\r\n" + $("#append-test").text(),
         //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
         htmlDecode      : "style,script,iframe",  // you can filter tags decode
         toc             : true,
