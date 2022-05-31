@@ -16,9 +16,6 @@
           <menu-unfold v-bind:menus="menus"></menu-unfold>
         </div>
       </div>
-      <div id="window-next" style="position: absolute; left: 50%;transform: translateX(-50%);top: 120px; z-index: 999">
-        <next-page></next-page>
-      </div>
     </div>
   </div>
 </template>
@@ -28,11 +25,10 @@
 import FillBack from "./back";
 import TitleLogo from "./logo";
 import MenuUnfold from "./menu/menu-unfold";
-import NextPage from "./next";
 
 export default {
   name: "Header",
-  components: { NextPage, MenuUnfold, TitleLogo, FillBack},
+  components: {MenuUnfold, TitleLogo, FillBack},
   data() {
     return {
       menus: [

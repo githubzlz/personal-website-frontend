@@ -10,7 +10,9 @@ import {
     MenuItemGroup,
     Pagination,
     Submenu,
-    Tag
+    Tag,
+    Row,
+    Col
 } from 'element-ui'
 
 Vue.use(Button)
@@ -24,3 +26,5 @@ Vue.use(Input)
 Vue.use(Pagination)
 Vue.use(Tag)
 Vue.use(ButtonGroup)
+Vue.use(Row)
+Vue.use(Col)

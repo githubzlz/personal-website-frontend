@@ -3,42 +3,47 @@
     <div id="banner_container">
       <div id="banner-title"></div>
       <div id="banner-subtitle">
-        {{banner.sub}}
+        {{ banner.sub }}
         <br>
         <div style="margin-top: 5px">
-          {{banner.sub2}}
+          {{ banner.sub2 }}
         </div>
       </div>
       <div id="banner-opt" v-if="banner.button.show">
         <div v-for="(b, i) in banner.button.buttons" v-bind:key="i" style="display: inline-block">
           <div class="opt-button" v-if="b.mode === 1" v-on:click="bClick1">
-            {{b.inner}}
+            {{ b.inner }}
             <div class="arrow-right">...</div>
           </div>
           <div class="opt-button2" v-if="b.mode === 2" v-on:click="bClick2">
-            {{b.inner}}
+            {{ b.inner }}
             <div class="arrow-right">...</div>
           </div>
         </div>
       </div>
     </div>
     <a id="pageStart" style="position: absolute; bottom: 0"></a>
+    <div id="window-next" style="position: absolute; left: 50%;transform: translateX(-50%);top: 120px; z-index: 999">
+      <next-page></next-page>
+    </div>
   </div>
 </template>
 
 <script>
 import {resize} from "@/assets/js/listener";
+import NextPage from "./next"
 
 export default {
   name: "Banner",
+  components: {NextPage},
   props: {
     banner: {
       type: Object
     },
-    bClick1:{
+    bClick1: {
       type: Function
     },
-    bClick2:{
+    bClick2: {
       type: Function
     }
   },

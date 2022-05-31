@@ -1,53 +1,14 @@
 <template>
   <div>
     <banner v-bind:banner="banner"/>
-    <div id="time_line_body" style="position: relative; margin-top: 20px; padding: 10px">
-      <div id="timelines1" class="timelines">
-        <div v-for="(item, index) in blogs" :key="index">
-          <div class="litime_left" v-if="item.direction === 0" :id="item.title">
-            <div class="time_point_left"></div>
-            <div class="litime_text_left">
-              <div style="margin-bottom: 10px">
-                {{ getDate(item.createdTime) }}
-              </div>
-              <span style="font-weight: bolder; font-size: 18px; cursor: pointer" v-on:click="toDetail(item.id)">
-                {{ item.title }}
-              </span>
-            </div>
-          </div>
-          <div class="litime_right" v-if="item.direction === 1" :id="item.title">
-            <div class="time_point_right"></div>
-            <div class="litime_text_right">
-              <div style="margin-bottom: 10px">
-                {{ getDate(item.createdTime) }}
-              </div>
-              <span style="font-weight: bolder; font-size: 18px; cursor: pointer" v-on:click="toDetail(item.id)">
-                {{ item.title }}
-              </span>
-            </div>
-          </div>
+    <div class="width-limit time-body">
+      <div class="month-card" v-for="month in blogs" v-bind:key="month.title">
+        <div class="month-card-title">
+          {{month.title}}
         </div>
-        <div style="float: left; width: 100%; margin-top: 20px">
-          <el-button type="text" v-on:click="getTimeShaft()">{{ operate }}</el-button>
-        </div>
-      </div>
-      <div id="timelines2" class="timelines">
-        <div v-for="(item, index) in blogs" :key="index">
-          <div class="litime_right" :id="item.title" style="width: 95%; margin-right: 10px">
-            <div class="time_point_right"></div>
-            <div class="litime_text_right">
-              <div style="margin-bottom: 10px">
-                {{ getDate(item.createdTime) }}
-              </div>
-              <span style="font-weight: bolder; font-size: 18px; cursor: pointer" v-on:click="toDetail(item.id)">
-                {{ item.title }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div style="float: left; width: 100%; margin-top: 20px">
-          <el-button type="text" v-on:click="getTimeShaft()">{{ operate }}</el-button>
-        </div>
+        <ul v-for="blog in month.data" v-bind:key="blog.title">
+          <li class="blog-title-src">{{blog.date}}-{{blog.title}}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -89,97 +50,59 @@ export default {
       },
       blogs: [
         {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试1',
-          direction: 0
+          title: '二O️二二年一月',
+          data: [
+            {title: "测试名称", date: '1月5日'},
+            {title: "测试名称", date: '1月6日'},
+            {title: "测试名称", date: '1月7日'},
+            {title: "测试名称", date: '1月8日'}
+          ]
         }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试1',
-          direction: 1
+          title: '二O️二二年二月',
+          data: [
+            {title: "测试名称", date: '2021/02/05'},
+            {title: "测试名称", date: '2021/02/06'},
+            {title: "测试名称", date: '2021/02/07'},
+            {title: "测试名称", date: '2021/02/08'}
+          ]
         }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试5',
-          direction: 0
+          title: '二O️二二年三月',
+          data: [
+            {title: "测试名称", date: '2021/03/05'},
+            {title: "测试名称", date: '2021/03/06'},
+            {title: "测试名称", date: '2021/03/07'},
+            {title: "测试名称", date: '2021/03/08'},
+            {title: "测试名称", date: '2021/03/05'},
+            {title: "测试名称", date: '2021/03/06'},
+            {title: "测试名称", date: '2021/03/07'},
+            {title: "测试名称", date: '2021/03/08'},
+            {title: "测试名称", date: '2021/03/05'},
+            {title: "测试名称", date: '2021/03/06'},
+            {title: "测试名称", date: '2021/03/07'},
+            {title: "测试名称", date: '2021/03/08'},
+            {title: "测试名称", date: '2021/03/05'},
+            {title: "测试名称", date: '2021/03/06'},
+            {title: "测试名称", date: '2021/03/07'},
+            {title: "测试名称", date: '2021/03/08'}
+          ]
         }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试2',
-          direction: 1
+          title: '二O️二二年四月',
+          data: [
+            {title: "测试名称", date: '2021/02/05'},
+            {title: "测试名称", date: '2021/02/06'},
+            {title: "测试名称", date: '2021/02/07'},
+            {title: "测试名称", date: '2021/02/08'}
+          ]
         }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试3',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试4',
-          direction: 1
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试5',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试2',
-          direction: 1
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试3',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试4',
-          direction: 1
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试5',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试2',
-          direction: 1
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试3',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试4',
-          direction: 1
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试5',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试2',
-          direction: 1
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试3',
-          direction: 0
-        }, {
-          id: 12312,
-          createdTime: 1644846525000,
-          title: '测试测试4',
-          direction: 1
+          title: '二O️二二年五月',
+          data: [
+            {title: "测试名称", date: '2021/05/05'},
+            {title: "测试名称", date: '2021/05/06'},
+            {title: "测试名称", date: '2021/05/07'},
+            {title: "测试名称", date: '2021/05/08'}
+          ]
         }
-      ],
+      ]
     }
   },
   methods: {
@@ -243,121 +166,41 @@ export default {
 
   },
   mounted() {
-    let height = document.getElementsByClassName('litime_right').item(0).clientHeight;
-    document.getElementById('time_line_body').style.height = (height + 20) * this.blogs.length + 'px';
+
   },
 
 }
 </script>
 
 <style scoped>
-#timelines1 {
-  display: block;
+.time-body {
+  margin-top: 80px;
 }
 
-#timelines2 {
-  display: none;
-}
-
-#time_line_body {
-  margin: 0 auto;
-  max-width: 1100px;
-  min-width: 360px;
-}
-
-.litime_text_right {
-  padding: 20px;
+.month-card {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 45%;
+  margin: 30px 1%;
+  font-size: 0.5em;
+  min-width: 450px;
   text-align: left;
-  margin-left: 20px;
+  border: 1px dashed #ced6e0;
+  border-radius: 5px;
 }
-
-.litime_text_left {
-  padding: 20px;
-  text-align: right;
-  margin-right: 20px
-}
-
-.litime_right:hover .time_point_right {
-  box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
-}
-
-.time_point_right {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
-  transition: all 400ms;
-  border: 1px solid rgba(0, 0, 0, .1);
-  z-index: 100;
-  top: 50%;
-  left: 0;
-  transform: translate(calc(-50% + 1px), -50%);
-  background-color: white;
-  height: 20px;
-  width: 20px;
+.month-card-title{
   position: absolute;
-  border-radius: 20px;
+  top: -35px;
+  left: 20px;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: test_zlz;
 }
-
-.litime_left:hover .time_point_left {
-  box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
-}
-
-.time_point_left {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
-  transition: all 400ms;
-  border: 1px solid rgba(0, 0, 0, .1);
-  z-index: 100;
-  top: 50%;
-  right: 0;
-  transform: translate(calc(50% - 1px), -50%);
-  background-color: #cec8ca;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  border-radius: 20px;
-}
-
-.litime_right:hover {
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-}
-
-.litime_right {
-  transition: all 400ms;
-  border-radius: 10px;
-  background-color: white;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  float: right;
-  width: calc(50% + 1px);
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.litime_left:hover {
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-}
-
-.litime_left {
-  transition: all 400ms;
-  border-radius: 10px;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: calc(50% + 1px);
-  position: relative;
-  float: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-@media screen and (max-width: 500px) {
-  #bannerTitle {
-    font-size: 30px;
-  }
-
-  #timelines1 {
-    display: none;
-  }
-
-  #timelines2 {
-    display: block;
-  }
+.blog-title-src{
+  margin: 10px 0 10px 20px;
+  color: #70a1ff;
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>

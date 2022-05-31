@@ -1,5 +1,5 @@
 <template>
-  <div class="card page_card_card shadow">
+  <div class="card page_card_card">
     <div class="page_card_image">
       <img style="width: 100%; height: 100%" :src="blog.imgSrc">
     </div>
@@ -48,11 +48,12 @@ export default {
 .page_card_card {
   position: relative;
   width: 85%;
-  height: 180px;
+  height: 160px;
   min-width: 200px;
   margin: 20px auto 0 auto;
   overflow: visible;
   transition: all 300ms;
+  border-radius: 20px;
 }
 
 .page_card_image {

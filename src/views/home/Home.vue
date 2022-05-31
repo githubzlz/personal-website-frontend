@@ -1,21 +1,21 @@
 <template>
   <div class="home">
     <banner v-bind:banner="banner" :bClick1="seeMore" :bClick2="readMore"/>
-    <home-menu/>
+<!--    <home-menu/>-->
     <a id="startBlogs"></a>
     <recommend/>
   </div>
 </template>
 
 <script>
-import HomeMenu from "./menu";
+// import HomeMenu from "./menu";
 import Recommend from "./recommend";
 import Banner from "../../public/banner";
 import $ from 'jquery';
 
 export default {
   name: "Home",
-  components: {Banner, Recommend, HomeMenu},
+  components: {Banner, Recommend},
   data() {
     return {
       banner: {
